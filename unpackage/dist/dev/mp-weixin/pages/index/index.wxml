@@ -1,0 +1,1 @@
+<view class="content"><image class="logo" src="/static/logo.png"></image><view class="text-area"><text class="title">{{title}}</text></view><button data-event-opts="{{[['tap',[['sendSocketMessage',['$event']]]]]}}" bindtap="__e">发送socket消息</button></view>
