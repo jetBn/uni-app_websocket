@@ -2,11 +2,12 @@
 	<view class="">
 		我的页面
 		<button @click="sendSocketMessage">发送socket消息</button>
+		<button @click="toSubPageHandle">跳子页面</button>
 	</view>
 </template>
 
 <script>
-	import store from '../../store/index.js'
+import store from '../../store/index.js'
 export default {
 	data() {
 		return {
@@ -14,11 +15,16 @@ export default {
 		}
 	},
 	methods: {
+		toSubPageHandle() {
+			uni.navigateTo({
+				url:'/pages/sub_page/index'
+			})
+		},
 		sendSocketMessage() {
 			this.send()
 		},
 		send() {
-			uni.sendSocketMessage({
+			store.state.wsInstance({
 				data: 'from ' + 'platform' + ' : ' + parseInt(Math.random() * 10000).toString(),
 				success(res) {
 					console.log(res);
@@ -34,7 +40,7 @@ export default {
 			// 	console.log('onMessage in minexxx', res)
 			// })
 			store.state.wsInstance.onMessage((res)=> {
-			    console.log('收到服务器内容：' + res.data);
+			    console.log('收到服务器内容 in mine page：' + res.data);
 			})
 		}
 	},

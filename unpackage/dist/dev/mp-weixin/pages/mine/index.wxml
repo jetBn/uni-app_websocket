@@ -1,1 +1,1 @@
-<view>我的页面<button data-event-opts="{{[['tap',[['sendSocketMessage',['$event']]]]]}}" bindtap="__e">发送socket消息</button></view>
+<view>我的页面<button data-event-opts="{{[['tap',[['sendSocketMessage',['$event']]]]]}}" bindtap="__e">发送socket消息</button><button data-event-opts="{{[['tap',[['toSubPageHandle',['$event']]]]]}}" bindtap="__e">跳子页面</button></view>

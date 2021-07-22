@@ -136,6 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var _index = _interopRequireDefault(__webpack_require__(/*! ../../store/index.js */ 11));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
 //
 //
@@ -143,12 +144,17 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../store/index.js
 //
 //
 //
-var _default = { data: function data() {return {};}, methods: {
+//
+var _default = { data: function data() {return {};}, methods: { toSubPageHandle: function toSubPageHandle() {
+      uni.navigateTo({
+        url: '/pages/sub_page/index' });
+
+    },
     sendSocketMessage: function sendSocketMessage() {
       this.send();
     },
     send: function send() {
-      uni.sendSocketMessage({
+      _index.default.state.wsInstance({
         data: 'from ' + 'platform' + ' : ' + parseInt(Math.random() * 10000).toString(),
         success: function success(res) {
           console.log(res);
@@ -164,7 +170,7 @@ var _default = { data: function data() {return {};}, methods: {
       // 	console.log('onMessage in minexxx', res)
       // })
       _index.default.state.wsInstance.onMessage(function (res) {
-        console.log('收到服务器内容：' + res.data);
+        console.log('收到服务器内容 in mine page：' + res.data);
       });
     } },
 

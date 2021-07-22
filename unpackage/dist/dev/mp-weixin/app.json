@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/mine/index"
+    "pages/mine/index",
+    "pages/sub_page/index"
   ],
   "subPackages": [],
   "window": {

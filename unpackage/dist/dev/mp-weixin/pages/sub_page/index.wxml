@@ -1,0 +1,1 @@
+<view><view class="txt">{{txt}}</view><button data-event-opts="{{[['tap',[['send',['$event']]]]]}}" bindtap="__e">发送socket消息</button></view>
